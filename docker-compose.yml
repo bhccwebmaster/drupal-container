@@ -29,8 +29,7 @@ services:
       - ./html:/var/www/html
 
   database:
-   # image: mariadb:latest
-    image: mariadb:10.9.6
+    image: mariadb:latest
     container_name: database
     ports:
       - "3306:3306"
@@ -40,7 +39,7 @@ services:
       MARIADB_USER: database
       MARIADB_PASSWORD: database
     healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      test: ["CMD", "/usr/local/bin/healthcheck.sh", "--connect"]
       timeout: 5s
       retries: 100
 
