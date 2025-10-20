@@ -33,7 +33,8 @@ jobs:
         run: composer create-project --stability dev localgovdrupal/localgov-project ./html "${{ matrix.localgov-version }}"
 
       - name: Start Docker environment
-        run: docker-compose up -d
+        # run: docker-compose up -d
+        run: docker compose up -d
 
       - name: Run tests
         run: ./run-tests.sh
