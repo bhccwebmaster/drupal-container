@@ -44,7 +44,8 @@ services:
       retries: 100
 
   chromedriver:
-    image: selenium/standalone-chrome:106.0
+    # image: selenium/standalone-chrome:106.0
+    image: selenium/standalone-chrome:120.0  # Use the latest stable version
     container_name: chromedriver
     environment:
       START_XVBF: 'false'
