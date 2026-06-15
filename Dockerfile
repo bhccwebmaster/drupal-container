@@ -21,6 +21,8 @@ RUN apt-get update && \
       zlib1g-dev && \
     docker-php-ext-configure gd --with-freetype --with-jpeg  && \
     docker-php-ext-install -j$(nproc) gd && \
+    docker-php-ext-configure pcntl --enable-pcntl && \
+    docker-php-ext-install pcntl && \
     docker-php-ext-install \
       bcmath \
       curl \
@@ -30,7 +32,6 @@ RUN apt-get update && \
       mysqli \
       pdo \
       pdo_mysql \
-      pcntl \
       zip  && \
     apt-get clean && \
     docker-php-source delete && \
