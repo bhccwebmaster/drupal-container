@@ -30,6 +30,7 @@ RUN apt-get update && \
       mysqli \
       pdo \
       pdo_mysql \
+      pcntl \
       zip  && \
     apt-get clean && \
     docker-php-source delete && \
